@@ -7,7 +7,6 @@ import styles from './styles/HomeStyles';
 class Home extends Component {
 
   onKeyPress(pressed) {
-
     this.props.onKeyPress(pressed);
   }
 
