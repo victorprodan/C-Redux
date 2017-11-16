@@ -150,4 +150,8 @@ class Home extends Component {
   }
 }
 
+Home.navigationOptions = {
+  title: 'HomeScreen',
+};
+
 export default Home;
