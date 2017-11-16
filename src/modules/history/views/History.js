@@ -11,8 +11,4 @@ class History extends Component {
   }
 }
 
-History.navigationOptions = {
-  history: 'HistoryScreen',
-};
-
 export default History;
