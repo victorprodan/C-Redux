@@ -6,8 +6,32 @@ import styles from './styles/HomeStyles';
 
 class Home extends Component {
 
-  onKeyPress(pressed) {
-    this.props.onKeyPress(pressed);
+  onDigitPress(pressed) {
+    this.props.onDigitPress(pressed);
+  }
+
+  onAddPress() {
+    this.props.onAddPress();
+  }
+
+  onMinusPress() {
+    this.props.onMinusPress();
+  }
+
+  onTimesPress() {
+    this.props.onTimesPress();
+  }
+
+  onDivPress() {
+    this.props.onDivPress();
+  }
+
+  onShowResult() {
+    this.props.onShowResult();
+  }
+
+  onClearPress() {
+    this.props.onClearPress();
   }
 
   render() {
@@ -15,7 +39,10 @@ class Home extends Component {
       <View style={styles.container}>
         <View style={styles.inputContainer}>
           <Text style={styles.inputTextStyle}>
-            {this.props.currentValue}
+            {this.props.result}
+          </Text>
+          <Text style={styles.inputTextStyle}>
+            {this.props.displayValue}
           </Text>
         </View>
         <View style={styles.keypadContainer}>
@@ -24,97 +51,97 @@ class Home extends Component {
               title='1'
               buttonStyle={styles.buttonResize}
               containerViewStyle={styles.buttonStyle}
-              onPress={this.onKeyPress.bind(this, 1)}
+              onPress={this.onDigitPress.bind(this, 1)}
             />
             <Button
               title='2'
               buttonStyle={styles.buttonResize}
               containerViewStyle={styles.buttonStyle}
-              onPress={this.onKeyPress.bind(this, 2)}
+              onPress={this.onDigitPress.bind(this, 2)}
             />
             <Button
               title='3'
               buttonStyle={styles.buttonResize}
               containerViewStyle={styles.buttonStyle}
-              onPress={this.onKeyPress.bind(this, 3)}
+              onPress={this.onDigitPress.bind(this, 3)}
             />
             <Button
               title='+'
               buttonStyle={styles.buttonResize}
               containerViewStyle={styles.buttonStyle}
-              onPress={this.onKeyPress.bind(this, '+')}
+              onPress={() => this.onAddPress()}
             />
             <Button
               title='4'
               buttonStyle={styles.buttonResize}
               containerViewStyle={styles.buttonStyle}
-              onPress={this.onKeyPress.bind(this, 4)}
+              onPress={this.onDigitPress.bind(this, 4)}
             />
             <Button
               title='5'
               buttonStyle={styles.buttonResize}
               containerViewStyle={styles.buttonStyle}
-              onPress={this.onKeyPress.bind(this, 5)}
+              onPress={this.onDigitPress.bind(this, 5)}
             />
             <Button
               title='6'
               buttonStyle={styles.buttonResize}
               containerViewStyle={styles.buttonStyle}
-              onPress={this.onKeyPress.bind(this, 6)}
+              onPress={this.onDigitPress.bind(this, 6)}
             />
             <Button
               title='-'
               buttonStyle={styles.buttonResize}
               containerViewStyle={styles.buttonStyle}
-              onPress={this.onKeyPress.bind(this, '-')}
+              onPress={() => this.onMinusPress()}
             />
             <Button
               title='7'
               buttonStyle={styles.buttonResize}
               containerViewStyle={styles.buttonStyle}
-              onPress={this.onKeyPress.bind(this, 7)}
+              onPress={this.onDigitPress.bind(this, 7)}
             />
             <Button
               title='8'
               buttonStyle={styles.buttonResize}
               containerViewStyle={styles.buttonStyle}
-              onPress={this.onKeyPress.bind(this, 8)}
+              onPress={this.onDigitPress.bind(this, 8)}
             />
             <Button
               title='9'
               buttonStyle={styles.buttonResize}
               containerViewStyle={styles.buttonStyle}
-              onPress={this.onKeyPress.bind(this, 9)}
+              onPress={this.onDigitPress.bind(this, 9)}
             />
             <Button
               title='*'
               buttonStyle={styles.buttonResize}
               containerViewStyle={styles.buttonStyle}
-              onPress={this.onKeyPress.bind(this, '*')}
+              onPress={() => this.onTimesPress()}
             />
             <Button
               title='CLEAR'
               buttonStyle={styles.buttonResize}
               containerViewStyle={styles.buttonStyle}
-              onPress={this.onKeyPress.bind(this, 'CLEAR')}
+              onPress={() => this.onClearPress()}
             />
             <Button
               title='0'
               buttonStyle={styles.buttonResize}
               containerViewStyle={styles.buttonStyle}
-              onPress={this.onKeyPress.bind(this, 0)}
+              onPress={this.onDigitPress.bind(this, 0)}
             />
             <Button
               title='='
               buttonStyle={styles.buttonResize}
               containerViewStyle={styles.buttonStyle}
-              onPress={this.onKeyPress.bind(this, '=')}
+              onPress={() => this.onShowResult()}
             />
             <Button
               title='/'
               buttonStyle={styles.buttonResize}
               containerViewStyle={styles.buttonStyle}
-              onPress={this.onKeyPress.bind(this, '/')}
+              onPress={() => this.onDivPress()}
             />
           </View>
         </View>

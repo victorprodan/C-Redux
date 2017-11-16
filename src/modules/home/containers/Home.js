@@ -1,18 +1,29 @@
 import { connect } from 'react-redux';
 
 import Home from '../views/Home';
-import { keyPress } from '../views/actions/HomeActions';
+import {
+  digitPress,
+  addPress,
+  minusPress,
+  timesPress,
+  divPress,
+  clearPress,
+  showResult
+ } from '../views/actions/HomeActions';
 
 export default connect(
   state => ({
-    currentValue: state.calculator.currentValue,
-    operator: state.calculator.operator,
-    lastValue: state.calculator.lastValue,
-    midValue: state.calculator.midValue,
-    nextValue: state.calculator.nextValue,
-    result: state.calculator.result
+    displayValue: state.calculator.displayValue,
+    showResult: state.calculator.showResult,
+    result: state.calculator.result,
   }),
   {
-    onKeyPress: keyPress
+    onDigitPress: digitPress,
+    onAddPress: addPress,
+    onMinusPress: minusPress,
+    onTimesPress: timesPress,
+    onDivPress: divPress,
+    onShowResult: showResult,
+    onClearPress: clearPress
   }
 )(Home);

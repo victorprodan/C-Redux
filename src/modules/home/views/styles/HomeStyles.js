@@ -19,7 +19,8 @@ export default StyleSheet.create({
     flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'space-around',
-    backgroundColor: 'yellow'
+    backgroundColor: 'yellow',
+    fontSize: 18
   },
   buttonStyle: {
     minWidth: '25%',
