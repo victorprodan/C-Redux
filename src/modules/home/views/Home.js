@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import { Button } from 'react-native-elements';
+import { Button, Header } from 'react-native-elements';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import styles from './styles/HomeStyles';
 
 class Home extends Component {
+  static navigationOptions = {
+    tabBarLabel: 'Home',
+    drawerIcon: ({ tintColor }) => {
+      return (
+        <MaterialIcons
+          name="card-membership"
+          size={24}
+          style={{ color: tintColor }}
+        />
+      );
+    }
+  }
 
   onDigitPress(pressed) {
     this.props.onDigitPress(pressed);
@@ -37,6 +50,16 @@ class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
+      <Header
+        leftComponent={
+          <Button
+          buttonStyle={{ backgroundColor: 'transparent' }}
+            icon={{ name: 'menu', size: 20 }}
+            onPress={() => }
+          />
+        }
+        centerComponent={{ text: 'Calculator', style: { fontSize: 16, color: '#fff' } }}
+      />
         <View style={styles.inputContainer}>
           <Text style={styles.inputTextStyle}>
             {this.props.result}
